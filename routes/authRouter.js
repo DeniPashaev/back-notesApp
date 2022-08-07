@@ -11,3 +11,4 @@ router.get('/users', authMiddleware, controller.getUsers)
 router.get('/user/:id', controller.getUsersById)
 
 module.exports = router
+//few
