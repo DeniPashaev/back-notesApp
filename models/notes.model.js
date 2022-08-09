@@ -9,6 +9,11 @@ const notesSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  remove: {
+    type: Boolean,
+    default: false,
+  },
+  removeTime: String
 });
 
 const Notes = mongoose.model("Notes", notesSchema);
