@@ -2,14 +2,18 @@ const mongoose = require("mongoose");
 
 const todosSchema = mongoose.Schema({
   name: String,
-  title: String,
+  todosAr:[
+    {
+      title:String,
+      completed: {
+        type: Boolean,
+        default: false,
+      }
+    }
+  ],
   time: String,
   color: String,
   important: {
-    type: Boolean,
-    default: false,
-  },
-  completed: {
     type: Boolean,
     default: false,
   },

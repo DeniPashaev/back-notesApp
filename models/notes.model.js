@@ -9,7 +9,7 @@ const notesSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  remove: {
+  removeNote: {
     type: Boolean,
     default: false,
   },

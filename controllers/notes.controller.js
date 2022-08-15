@@ -3,7 +3,7 @@ const Notes = require("../models/notes.model");
 module.exports.notesController = {
   postNotes: async (req, res) => {
     try {
-      const { name, title, time, color, important, remove, removeTime} = req.body;
+      const { name, title, time, color, important, removeNote, removeTime} = req.body;
 
       const notic = await Notes.create({
         name,
@@ -11,7 +11,7 @@ module.exports.notesController = {
         time,
         color,
         important,
-        remove,
+        removeNote,
         removeTime
       });
 
@@ -61,7 +61,7 @@ module.exports.notesController = {
         color: req.body.color,
         important: req.body.important,
         removeTime: req.body.removeTime,
-        remove: req.body.remove
+        removeNote: req.body.removeNote
       });
       const notic = await Notes.findById(req.params.id);
       return res.json(notic);

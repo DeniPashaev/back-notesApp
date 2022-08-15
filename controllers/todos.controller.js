@@ -3,15 +3,14 @@ const Todo = require("../models/todos.model");
 module.exports.todosController = {
   postTodo: async (req, res) => {
     try {
-      const { name, title, time, color, important, completed } = req.body;
+      const { name, todosAr, time, color, important } = req.body;
 
       const todic = await Todo.create({
         name,
-        title,
+        todosAr,
         time,
         color,
         important,
-        completed
       });
 
       return res.json(todic);
@@ -55,11 +54,10 @@ module.exports.todosController = {
     try {
       await Todo.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
-        title: req.body.title,
+        todosAr: req.body.todosAr,
         time: req.body.time,
         color: req.body.color,
         important: req.body.important,
-        completed: req.body.completed
       });
       const todic = await Todo.findById(req.params.id);
       return res.json(todic);
@@ -70,5 +68,3 @@ module.exports.todosController = {
     }
   },
 };
-
-//feas
