@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const todosSchema = mongoose.Schema({
   name: String,
+  isTodo: {
+    type: Boolean,
+    default: false,
+  },
   todosAr:[
     {
       title:String,

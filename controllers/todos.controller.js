@@ -3,10 +3,11 @@ const Todo = require("../models/todos.model");
 module.exports.todosController = {
   postTodo: async (req, res) => {
     try {
-      const { name, todosAr, time, color, important } = req.body;
+      const { name, todosAr, time, color, important, isTodo } = req.body;
 
       const todic = await Todo.create({
         name,
+        isTodo,
         todosAr,
         time,
         color,
@@ -58,6 +59,7 @@ module.exports.todosController = {
         time: req.body.time,
         color: req.body.color,
         important: req.body.important,
+        isTodo: req.body.isTodo
       });
       const todic = await Todo.findById(req.params.id);
       return res.json(todic);
