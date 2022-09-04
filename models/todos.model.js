@@ -21,6 +21,11 @@ const todosSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  removeTodo: {
+    type: Boolean,
+    default: false,
+  },
+  removeTime: String
 });
 
 const Todo = mongoose.model("Todo", todosSchema);
