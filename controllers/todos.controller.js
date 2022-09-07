@@ -74,3 +74,20 @@ module.exports.todosController = {
     }
   },
 };
+
+
+ /*
+  pathTodoArr: async (req, res) => {
+    try {
+      await Todo.findByIdAndUpdate(req.params.id.id, {
+        todosAr: req.body.todosAr,
+      });
+      const todic = await Todo.findById(req.params.id);
+      return res.json(todic);
+    } catch (error) {
+      return res.status(400).json({
+        error: "Ошибка при изменении: " + error.message,
+      });
+    }
+  },
+  */
