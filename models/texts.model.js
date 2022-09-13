@@ -6,6 +6,11 @@ const textsSchema = mongoose.Schema({
   time: String,
   price: Number,
   point: Number,
+  count: number,
+  completed: {
+    tipe: Boolean,
+    default: false,
+  }
 });
 
 const Texts = mongoose.model("Texts", textsSchema);
