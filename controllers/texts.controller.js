@@ -31,4 +31,15 @@ module.exports.textController = {
       });
     }
   },
+  getAlltexts: async (req, res) => {
+    try {
+      const textic = await Notes.find();
+      return res.json(textic);
+    } catch (error) {
+      return res.status(400).json({
+        error: "Ошибка при выводе всех текстов: " + error.message,
+      });
+    }
+  },
+
 }
