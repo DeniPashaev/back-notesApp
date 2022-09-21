@@ -10,7 +10,7 @@ const textsSchema = mongoose.Schema({
   completed: {
     tipe: Boolean,
     default: false,
-  }
+  },
 });
 
 const Texts = mongoose.model("Texts", textsSchema);

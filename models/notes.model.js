@@ -17,7 +17,7 @@ const notesSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  removeTime: String
+  removeTime: String,
 });
 
 const Notes = mongoose.model("Notes", notesSchema);
