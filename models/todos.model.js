@@ -6,14 +6,14 @@ const todosSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  todosAr:[
+  todosAr: [
     {
-      title:String,
+      title: String,
       completed: {
         type: Boolean,
         default: false,
-      }
-    }
+      },
+    },
   ],
   time: String,
   color: String,
@@ -25,7 +25,7 @@ const todosSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  removeTime: String
+  removeTime: String,
 });
 
 const Todo = mongoose.model("Todo", todosSchema);

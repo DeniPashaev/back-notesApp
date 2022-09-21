@@ -3,7 +3,16 @@ const Todo = require("../models/todos.model");
 module.exports.todosController = {
   postTodo: async (req, res) => {
     try {
-      const { name, todosAr, time, color, important, isTodo, removeTodo, removeTime } = req.body;
+      const {
+        name,
+        todosAr,
+        time,
+        color,
+        important,
+        isTodo,
+        removeTodo,
+        removeTime,
+      } = req.body;
 
       const todic = await Todo.create({
         name,
@@ -13,7 +22,7 @@ module.exports.todosController = {
         color,
         important,
         removeTodo,
-        removeTime
+        removeTime,
       });
 
       return res.json(todic);
@@ -63,7 +72,7 @@ module.exports.todosController = {
         important: req.body.important,
         isTodo: req.body.isTodo,
         removeTodo: req.body.removeTodo,
-        removeTime: req.body.removeTime
+        removeTime: req.body.removeTime,
       });
       const todic = await Todo.findById(req.params.id);
       return res.json(todic);
@@ -74,20 +83,3 @@ module.exports.todosController = {
     }
   },
 };
-
-
- /*
-  pathTodoArr: async (req, res) => {
-    try {
-      await Todo.findByIdAndUpdate(req.params.id.id, {
-        todosAr: req.body.todosAr,
-      });
-      const todic = await Todo.findById(req.params.id);
-      return res.json(todic);
-    } catch (error) {
-      return res.status(400).json({
-        error: "Ошибка при изменении: " + error.message,
-      });
-    }
-  },
-  */
